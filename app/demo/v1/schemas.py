@@ -16,14 +16,14 @@ from swagger_py_codegen.parser import RefNode
 
 base_path = '/v1'
 
-definitions = {'definitions': {'Question': {'type': 'object', 'properties': {'message': {'type': 'string', 'description': '...'}}}}, 'parameters': {}}
+definitions = {'definitions': {'Question': {'type': 'object', 'properties': {'message': {'type': 'string', 'description': '...'}}}, 'Answer': {'type': 'object', 'properties': {'message': {'type': 'string', 'description': '...'}}}}, 'parameters': {}}
 
 validators = {
     ('ask', 'POST'): {'json': {'$ref': '#/definitions/Question'}},
 }
 
 filters = {
-    ('ask', 'POST'): {200: {'headers': None, 'schema': None}, 404: {'headers': None, 'schema': None}},
+    ('ask', 'POST'): {200: {'headers': None, 'schema': {'$ref': '#/definitions/Answer'}}, 404: {'headers': None, 'schema': None}},
 }
 
 scopes = {

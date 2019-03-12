@@ -15,6 +15,12 @@ definitions:
       message:
         type: string
         description: "..."
+  Answer:
+    type: object
+    properties:
+      message:
+        type: string
+        description: "..."
       
 paths:
   /ask:
@@ -32,6 +38,8 @@ paths:
       responses:
         '200':
           description: OK
+          schema:
+            $ref: '#/definitions/Answer'
           
         '404':
           description: Invalid status value
