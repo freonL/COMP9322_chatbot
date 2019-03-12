@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  title: Common Chatbot API
+  description: Chatbot.
+  version: 1.0.0
+basePath: /v1
+consumes:
+  - application/json
+produces:
+  - application/json
+definitions:
+  Question:
+    type: object
+    properties:
+      message:
+        type: string
+        description: "..."
+      
+paths:
+  /ask:
+    post:
+      operationId: asking
+      summary: asking the bot
+      tags:
+        - Appointments
+      parameters:
+        - name: "body"
+          in: "body"
+          schema:
+            $ref: '#/definitions/Question'
+        
+      responses:
+        '200':
+          description: OK
+          
+        '404':
+          description: Invalid status value
+    
