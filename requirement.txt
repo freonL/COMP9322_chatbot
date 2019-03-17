@@ -1,0 +1,17 @@
+aniso8601==6.0.0
+click==6.7
+dpath==1.4.2
+Flask==1.0.2
+Flask-RESTful==0.3.7
+itsdangerous==1.1.0
+Jinja2==2.10
+json-spec==0.10.1
+jsonschema==2.6.0
+MarkupSafe==1.1.1
+pytz==2018.9
+PyYAML==4.2b1
+rivescript==1.14.9
+six==1.12.0
+swagger-py-codegen==0.3.9
+swagger-spec-validator==2.4.3
+Werkzeug==0.14.1
