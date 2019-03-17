@@ -1,2 +1,4 @@
 venv/*
 .vscode/*
+app/demo/v1/__pycache__/*
+app/demo/v1/api/__pycache__/*
