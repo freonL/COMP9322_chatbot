@@ -15,10 +15,7 @@ class Ask(Resource):
         bot = RiveScript()
         bot.load_directory("app/demo/v1/api/brain")
         bot.sort_replies()
-
-        reply = bot.reply("user1", g.json['message'])
-
-
+        reply = bot.reply("localuser", g.json['message'])
         output = {"message": reply}
 
         return output, 200, None

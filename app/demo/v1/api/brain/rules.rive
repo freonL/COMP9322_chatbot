@@ -1,26 +1,43 @@
 
-+ (hi|hello|olla) bot
++ hi
 - hi user!
 - hi human!
 - hello, user!
 - hello, human!
 - ola, user!
 - ola, human!
+
++ (hi|hello|olla|hey) bot
+@ hi
++ (hey|hello|olla)
+@ hi
+
+
 + how are you
 - I'm good, how are you?
 - Good, mate
 + where are you from
 - I'm from my country
 
-+ my name is *
++ my name is * {weight=10}
 - nice to meet you, <star1>!
 - oh hey, <star1>!
 
 + i am (happy|excited|thrilled)
 - i am happy too for you
 
-+ (what|how) is the weather like in *
-- we have clear sky in <star2>
-- we have cloudy in <star2>
-- we have heavy rain in <star2>
-- we have shower in <star2>
++ (what|how) is the weather like in * {weight=10}
+- we have <call>real_weather</call> in <set city=<star2>><star2>
+// - we have clear sky in <star2>
+// - we have cloudy in <star2>
+// - we have heavy rain in <star2>
+// - we have shower in <star2>
+
+
+> object real_weather python
+    import requests
+    city = rs.get_uservar(rs.current_user(),'city')
+    APIKEY= "79d869a1879d44849a571e0dad1ee90b"
+    responses = requests.get("http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}".format(city,APIKEY))
+    return responses.json()['weather'][0]['description']
+< object
